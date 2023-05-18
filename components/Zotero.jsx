@@ -10,3 +10,10 @@ export default Zotero;
 // the part that we need.
 
 // Now we need to figure out OAuth because my library is private.
+
+fetch(`https://api.zotero.org/users/6104870/collections`, {
+  method: "GET",
+  headers: {
+    "Zotero-API-Key": process.env.ZOTERO_APIKEY,
+  },
+}).then((res) => console.log(res));

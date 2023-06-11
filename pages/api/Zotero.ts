@@ -1,7 +1,5 @@
-require("dotenv").config();
-let ZoteroAPIKey = process.env.NEXT_PUBLIC_Zotero_API_Key;
-console.log(ZoteroAPIKey);
-console.log(process.env);
+require("dotenv").config({ path: "./.env.local" });
+let ZoteroAPIKey = process.env.Zotero_API_Key;
 
 if (ZoteroAPIKey) {
   let myHeaders = new Headers();

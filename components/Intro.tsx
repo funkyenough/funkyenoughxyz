@@ -3,9 +3,10 @@ import React from "react";
 function Intro() {
   return (
     <div>
-      <div>My name is Funky Enough.</div>
-      <div>I am a frontend dev</div>
-      <div>Skillset: Typescript, NextJS, Zero Knowledge Proof</div>
+      <div className="text-lg font-bold">Funkyenough's Website</div>
+      <div>Flaneur, Generalist</div>
+      <div>Philosopher</div>
+      <div className="text-lg font-bold">Skills</div>
     </div>
   );
 }

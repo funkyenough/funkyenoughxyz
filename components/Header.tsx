@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="OutermostBox sticky top-0 flex items-center justify-between shadow-sm px-2 py-2">
+    <header className="OutermostBox sticky top-0 flex items-center justify-between shadow-sm px-2 py-2 mx-5">
       <div className="LeftBoxLogo">
         <Link href="https://fracton.ventures">
           <Image
@@ -18,18 +18,18 @@ export default function Header() {
           />
         </Link>
       </div>
-      <div className=" flex space-x-2 font-bold">
-        <div className="About">
-          <Link href="https://fracton.ventures/jp/about">about</Link>
+      <div className="flex space-x-2 font-bold">
+        <div className="">
+          <Link href="/#Intro">Home</Link>
         </div>
-        <div className="MEV-Boost">
-          <Link href="https://boost.flashbots.net/">MEVBoost</Link>
+        <div className="">
+          <Link href="/#Projects">Portfolio</Link>
         </div>
-        <div className="Forum">
-          <Link href="https://collective.flashbots.net/">Forum</Link>
+        <div className="">
+          <Link href="/#Skills">Skills</Link>
         </div>
-        <div className="JoinUs">
-          <Link href="https://www.flashbots.net/jobs">Join Us</Link>
+        <div className="">
+          <Link href="/#Contact">Contact</Link>
         </div>
         {/* <div>
           <LocaleSwitcher />

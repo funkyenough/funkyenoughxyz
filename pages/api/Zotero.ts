@@ -18,21 +18,21 @@ export default async function fetchZoteroItems(
 
   const url = `https://api.zotero.org/users/${userId}/items`;
 
-  // try {
-  const response = await fetch(url, {
-    method: "GET",
-    headers: myHeaders,
-    redirect: "follow",
-  });
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      headers: myHeaders,
+      redirect: "follow",
+    });
 
-  const result = await response.json();
-  const titles = result.map((item) => item.data.title);
-  const dateAdded = result.map((item) => item.data.dateAdded);
+    const result = await response.json();
+    const titles = result.map((item) => item.data.title);
+    const dateAdded = result.map((item) => item.data.dateAdded);
 
-  res.status(200).json({ titles, dateAdded });
-  // } catch (error) {
-  //   res
-  //     .status(500)
-  //     .json({ error: "Something went wrong", message: error.message });
-  // }
+    res.status(200).json({ titles, dateAdded });
+  } catch (error) {
+    res
+      .status(500)
+      .json({ error: "Something went wrong", message: error.message });
+  }
 }

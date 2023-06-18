@@ -26,10 +26,18 @@ export default async function fetchZoteroItems(
     });
 
     const result = await response.json();
-    const titles = result.map((item) => item.data.title);
-    const dateAdded = result.map((item) => item.data.dateAdded);
+    const filteredResult = result.filter(
+      (item) => item.data.itemType !== "attachment"
+    );
+    const items = filteredResult.map((item) => {
+      return {
+        creatorSummary: item.meta.creatorSummary,
+        title: item.data.title,
+        dateAdded: item.data.dateAdded,
+      };
+    });
 
-    res.status(200).json({ titles, dateAdded });
+    res.status(200).json(items);
   } catch (error) {
     res
       .status(500)

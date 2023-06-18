@@ -1,7 +1,11 @@
 import React, { useEffect, useState } from "react";
 
 function Intro() {
-  const [data, setData] = useState({ titles: [], dateAdded: [] });
+  const [data, setData] = useState({
+    titles: [],
+    dateAdded: [],
+    // creators: [],
+  });
   useEffect(() => {
     fetch("/api/zotero")
       .then((response) => response.json())
@@ -31,6 +35,16 @@ function Intro() {
             <li key={date}>{date}</li>
           ))}
         </ul>
+        <h2>Creators:</h2>
+        {/* <ul>
+          {data.creators.map((creatorArray, index) =>
+            creatorArray.map((creator) => (
+              <li key={`${creator.firstName}-${creator.lastName}-${index}`}>
+                {creator.firstName} {creator.lastName}
+              </li>
+            ))
+          )}
+        </ul> */}
       </div>
     </div>
   );

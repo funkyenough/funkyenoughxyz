@@ -8,7 +8,7 @@ export default async function fetchZoteroItems(
   require("dotenv").config({ path: "./.env.local" });
 
   const apiKey = process.env.Zotero_API_Key || "";
-  const userId = process.env.zoteroUserId || "";
+  const userId = process.env.Zotero_User_ID || "";
   console.log(apiKey, userId);
 
   const myHeaders = new Headers({

@@ -1,7 +1,13 @@
 import React, { useEffect, useState } from "react";
 
+interface Item {
+  title: string;
+  dateAdded: string;
+  creatorSummary: string;
+}
+
 function Intro() {
-  const [data, setData] = useState([]);
+  const [data, setData] = useState<Item[]>([]);
 
   useEffect(() => {
     fetch("/api/zotero")
@@ -11,8 +17,7 @@ function Intro() {
   }, []);
 
   return (
-    <div>
-      <div className="text-lg font-bold">Funkyenough's Website</div>
+    <div className="space-y-3">
       <div>Flaneur, Generalist</div>
       <div>Philosopher</div>
       <div className="text-lg font-bold">Skills</div>

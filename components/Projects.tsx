@@ -5,7 +5,10 @@ function Projects() {
     <div>
       <div>
         <div className="text-lg font-bold">Current Projects</div>
-        <div></div>
+        <div>
+          <div>Philosophy Tools</div>
+          <div>Concept Expansion on Cartesian Plane</div>
+        </div>
       </div>
       <div>
         <div className="text-lg font-bold">Past Projects</div>

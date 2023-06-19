@@ -5,17 +5,10 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="OutermostBox sticky top-0 flex items-center justify-between shadow-sm px-2 py-2 mx-5">
-      <div className="LeftBoxLogo">
-        <Link href="https://fracton.ventures">
-          <Image
-            src={
-              "https://fracton.ventures/static/fracton-rec-black-7c41d24d2b0cd8d9f9aa5c6c34e11751.png"
-            }
-            alt={"Logo"}
-            width={120}
-            height={120}
-          />
+    <header className="sticky top-0 flex items-center justify-between shadow-sm py-2 z-10">
+      <div>
+        <Link href="https://funkyenough.xyz">
+          <div className="text-lg font-bold">Funkyenough's Website</div>
         </Link>
       </div>
       <div className="flex space-x-2 font-bold">

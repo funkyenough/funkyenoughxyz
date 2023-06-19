@@ -1,6 +1,21 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
+interface Item {
+  meta: {
+    creatorSummary: string;
+  };
+  data: {
+    itemType: string;
+    title: string;
+    dateAdded: string;
+  };
+}
+
+interface ApiResponse {
+  items: Item[];
+}
+
 export default async function fetchZoteroItems(
   req: NextApiRequest,
   res: NextApiResponse
@@ -26,7 +41,8 @@ export default async function fetchZoteroItems(
     });
 
     const result = await response.json();
-    const filteredResult = result.filter(
+    const typedResult = result as ApiResponse; // Type assertion
+    const filteredResult = typedResult.items.filter(
       (item) =>
         item.data.itemType !== "attachment" &&
         item.data.itemType !== "annotation"
@@ -41,8 +57,6 @@ export default async function fetchZoteroItems(
 
     res.status(200).json(items);
   } catch (error) {
-    res
-      .status(500)
-      .json({ error: "Something went wrong", message: error.message });
+    res.status(500).json({ error: "Something went wrong" });
   }
 }

@@ -16,7 +16,7 @@ export default async function fetchZoteroItems(
   });
   console.log(myHeaders);
 
-  const url = `https://api.zotero.org/users/${userId}/items`;
+  const url = `https://api.zotero.org/users/${userId}/items?format=json&sort=dateAdded&direction=desc&itemType=-attachment || annotation&limit=5`;
 
   try {
     const response = await fetch(url, {
@@ -27,7 +27,9 @@ export default async function fetchZoteroItems(
 
     const result = await response.json();
     const filteredResult = result.filter(
-      (item) => item.data.itemType !== "attachment"
+      (item) =>
+        item.data.itemType !== "attachment" &&
+        item.data.itemType !== "annotation"
     );
     const items = filteredResult.map((item) => {
       return {

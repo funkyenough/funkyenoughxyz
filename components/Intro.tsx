@@ -17,17 +17,25 @@ function Intro() {
       <div>Philosopher</div>
       <div className="text-lg font-bold">Skills</div>
       <div>
-        <h2>Items:</h2>
-        <ul>
-          {data.map((item) => (
-            <li key={item.title}>
-              <h3>Title: {item.title}</h3>
-              <p>Creator Summary: {item.creatorSummary}</p>
-              <p>Date Added: {item.dateAdded}</p>
-            </li>
-          ))}
-        </ul>
+        <div>Web3 Frontend</div>
+        <div>Blockchain</div>
+        <div></div>
       </div>
+      <div className="text-lg font-bold">What I am reading recently</div>
+      <ul>
+        {data.map((item) => (
+          <li key={item.title}>
+            <div className="flex flex-col">
+              <div className="flex flex-row space-x-5">
+                <div>{item.dateAdded}</div>
+                <div>{item.creatorSummary}</div>
+              </div>
+              <div>{item.title}</div>
+            </div>
+            <br />
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

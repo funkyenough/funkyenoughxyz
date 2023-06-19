@@ -11,10 +11,12 @@ const Home: NextPage = () => {
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>
-      <Header />
-      <Intro />
-      <Projects />
-      <Contact />
+      <div className="m-10">
+        <Header />
+        <Intro />
+        <Projects />
+        <Contact />
+      </div>
     </div>
   );
 };

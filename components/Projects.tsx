@@ -8,8 +8,7 @@ function Projects() {
         <div></div>
       </div>
       <div>
-        <div className="text-lg font-bold">Past Projects</div>;<div></div>
-        <div></div>
+        <div className="text-lg font-bold">Past Projects</div>
       </div>
     </div>
   );

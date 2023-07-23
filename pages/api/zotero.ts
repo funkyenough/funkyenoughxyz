@@ -1,6 +1,11 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
+interface Creator {
+  firstName: string;
+  lastName: string;
+}
+
 interface Item {
   meta: {
     creatorSummary: string;
@@ -9,11 +14,9 @@ interface Item {
     itemType: string;
     title: string;
     dateAdded: string;
+    creators: Creator[];
+    url: string;
   };
-}
-
-interface ApiResponse {
-  items: Item[];
 }
 
 export default async function fetchZoteroItems(
@@ -40,23 +43,28 @@ export default async function fetchZoteroItems(
       redirect: "follow",
     });
 
-    const result = (await response.json()) as ApiResponse;
+    const result = (await response.json()) as Item;
 
     const filteredResult = result.filter(
-      (item) =>
+      (item: Item) =>
         item.data.itemType !== "attachment" &&
         item.data.itemType !== "annotation"
     );
-
-    console.log(filteredResult);
 
     const items = filteredResult.map((item) => {
       return {
         creatorSummary: item.meta.creatorSummary,
         title: item.data.title,
         dateAdded: item.data.dateAdded,
+        firstName:
+          item.data.creators.length > 0 ? item.data.creators[0].firstName : "",
+        lastName:
+          item.data.creators.length > 0 ? item.data.creators[0].lastName : "",
+        url: item.data.url,
       };
     });
+
+    console.log(items);
 
     res.status(200).json(items);
   } catch (error) {

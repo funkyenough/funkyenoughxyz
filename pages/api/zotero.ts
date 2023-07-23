@@ -40,13 +40,16 @@ export default async function fetchZoteroItems(
       redirect: "follow",
     });
 
-    const result = await response.json();
-    const typedResult = result as ApiResponse; // Type assertion
-    const filteredResult = typedResult.items.filter(
+    const result = (await response.json()) as ApiResponse;
+
+    const filteredResult = result.filter(
       (item) =>
         item.data.itemType !== "attachment" &&
         item.data.itemType !== "annotation"
     );
+
+    console.log(filteredResult);
+
     const items = filteredResult.map((item) => {
       return {
         creatorSummary: item.meta.creatorSummary,

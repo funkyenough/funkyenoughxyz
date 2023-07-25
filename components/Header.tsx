@@ -8,7 +8,7 @@ export default function Header() {
     <header className="sticky top-0 flex items-center justify-between shadow-sm py-2 z-10">
       <div>
         <Link href="https://funkyenough.xyz">
-          <div className="text-lg font-bold">Funkyenough's Website</div>
+          <div className="text-lg font-bold">Funkyenough</div>
         </Link>
       </div>
       <div className="flex space-x-2 font-bold">

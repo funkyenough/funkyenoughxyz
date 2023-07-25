@@ -52,14 +52,25 @@ export default async function fetchZoteroItems(
     );
 
     const items = filteredResult.map((item) => {
+      let firstName = "";
+      let lastName = "";
+
+      if (item.data.creators.length > 0) {
+        firstName = item.data.creators[0].firstName;
+        lastName = item.data.creators[0].lastName;
+      }
+
+      if (item.data.creators.length > 1) {
+        // If there are more than one creators, append "et al." to the last name
+        lastName += " et al.";
+      }
+
       return {
         creatorSummary: item.meta.creatorSummary,
         title: item.data.title,
         dateAdded: item.data.dateAdded,
-        firstName:
-          item.data.creators.length > 0 ? item.data.creators[0].firstName : "",
-        lastName:
-          item.data.creators.length > 0 ? item.data.creators[0].lastName : "",
+        firstName,
+        lastName,
         url: item.data.url,
       };
     });

@@ -40,19 +40,22 @@ function Intro() {
           <div></div>
         </div>
         <div className="text-lg font-bold">What I am reading lately</div>
-        <ul>
+        <ul className="space-y-2">
           {data.map((item) => (
             <li key={item.title}>
               <div className="flex flex-col">
-                <div className="flex flex-row space-x-4">
-                  <div>Date Added: {formatDate(item.dateAdded)}</div>
+                <div className="flex flex-row justify-between">
                   <div className="flex flex-row space-x-1">
                     <div>{item.firstName}</div>
                     <div>{item.lastName}</div>
                   </div>
+                  <div>
+                    <div>Date Added: {formatDate(item.dateAdded)}</div>
+                  </div>
                 </div>
                 <a href={item.url}>{item.title}</a>
               </div>
+
               <br />
             </li>
           ))}

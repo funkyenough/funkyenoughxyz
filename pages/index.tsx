@@ -9,7 +9,7 @@ import Contact from "../components/Contact";
 
 const Home: NextPage = () => {
   return (
-    <div>
+    <div className="flex justify-center">
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>

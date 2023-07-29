@@ -5,7 +5,7 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 flex items-center justify-between shadow-sm py-2 z-10">
+    <header className="sticky top-0 flex items-center justify-between shadow-sm py-2 z-40 bg-black">
       <div>
         <Link href="https://funkyenough.xyz">
           <div className="text-lg font-bold">Funkyenough</div>

@@ -5,16 +5,13 @@ import Image from "next/image";
 
 export default function Header() {
   return (
-    <header className="sticky top-0 flex items-center justify-between shadow-sm py-2 z-40 bg-black">
+    <header className="mx-5 sticky top-0 flex justify-between shadow-sm py-2 z-40 bg-black">
       <div>
         <Link href="https://funkyenough.xyz">
           <div className="text-lg font-bold">Funkyenough</div>
         </Link>
       </div>
-      <div className="flex space-x-2 font-bold">
-        <div className="">
-          <Link href="/#Intro">Home</Link>
-        </div>
+      <div className="flex flex-row space-x-4 font-bold">
         <div className="">
           <Link href="/#Projects">Portfolio</Link>
         </div>
@@ -24,6 +21,7 @@ export default function Header() {
         <div className="">
           <Link href="/#Contact">Contact</Link>
         </div>
+        <div></div>
         {/* <div>
           <LocaleSwitcher />
         </div>

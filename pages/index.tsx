@@ -14,12 +14,12 @@ const Home: NextPage = () => {
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>
-      <div className="p-10 bg-black text-white space-y-5">
+      <div className="p-10 bg-black text-white space-y-10">
         <Header />
-        <div className="max-w-xl mx-auto">
+        <div className="flex flex-col max-w-2xl mx-auto space-y-5">
           <Intro />
           <Projects />
-          <Contact />
+          {/* <Contact /> */}
         </div>
         <Footer />
       </div>

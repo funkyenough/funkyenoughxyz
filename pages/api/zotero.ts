@@ -28,12 +28,10 @@ export default async function fetchZoteroItems(
 
   const apiKey = process.env.Zotero_API_Key || "";
   const userId = process.env.Zotero_User_ID || "";
-  console.log(apiKey, userId);
 
   const myHeaders = new Headers({
     "Zotero-API-Key": apiKey,
   });
-  console.log(myHeaders);
 
   const url = `https://api.zotero.org/users/${userId}/items?format=json&sort=dateAdded&direction=desc&itemType=-attachment || annotation&limit=5`;
 
@@ -85,8 +83,6 @@ export default async function fetchZoteroItems(
         };
       }
     );
-
-    console.log(items);
 
     res.status(200).json(items);
   } catch (error) {

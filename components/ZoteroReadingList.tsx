@@ -22,30 +22,30 @@ function SkeletonItem() {
 }
 
 function ZoteroReadingList() {
-  const [isLoading, setIsLoading] = useState(true);
+  // const [isLoading, setIsLoading] = useState(true);
   const [data, setData] = useState<Item[]>([]);
 
-  if (isLoading) {
-    return (
-      <div>
-        <div className="text-lg font-bold">What I am reading lately</div>
-        <ul className="space-y-2">
-          {Array.from({ length: 5 }).map((_, index) => (
-            <SkeletonItem key={index} />
-          ))}
-        </ul>
-      </div>
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <div>
+  //       <div className="text-lg font-bold">What I am reading lately</div>
+  //       <ul className="space-y-2">
+  //         {Array.from({ length: 5 }).map((_, index) => (
+  //           <SkeletonItem key={index} />
+  //         ))}
+  //       </ul>
+  //     </div>
+  //   );
+  // }
 
   useEffect(() => {
     fetch("/api/zotero")
       .then((response) => response.json())
       .then((data) => setData(data))
-      .catch((error) => console.error("Error:", error))
-      .finally(() => {
-        setIsLoading(false);
-      });
+      .catch((error) => console.error("Error:", error));
+    // .finally(() => {
+    //   setIsLoading(false);
+    // });
   }, []);
 
   // Function to convert ISO date to custom format (YYYY/MM/DD)
@@ -59,7 +59,7 @@ function ZoteroReadingList() {
 
   return (
     <div>
-      <div className="text-lg font-bold">What I am reading lately</div>
+      <div className="text-lg font-bold my-8">What I am reading lately</div>
       <ul className="space-y-2">
         {data.map((item) => (
           <li key={item.title}>
@@ -72,7 +72,9 @@ function ZoteroReadingList() {
                   <div>{formatDate(item.dateAdded)}</div>
                 </div>
               </div>
-              <a href={item.url}>{item.title}</a>
+              <a href={item.url} className="text-left">
+                {item.title}
+              </a>
             </div>
 
             <br />

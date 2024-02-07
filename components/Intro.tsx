@@ -1,5 +1,3 @@
-import ZoteroReadingList from "./ZoteroReadingList";
-
 function Intro() {
   return (
     <div className="flex flex-row text-center justify-center">
@@ -24,8 +22,6 @@ function Intro() {
             </div>
           </div>
         </div>
-        <ZoteroReadingList />
-        <div className="bg-black"></div>
       </div>
     </div>
   );

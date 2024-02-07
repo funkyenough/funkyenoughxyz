@@ -4,7 +4,7 @@ import Header from "../components/Header";
 import Intro from "../components/Intro";
 import Projects from "../components/Projects";
 import Contact from "../components/Contact";
-import Footer from "../components/Footer";
+import ZoteroReadingList from "../components/ZoteroReadingList";
 
 // Design Inspiration https://m3.material.io/get-started
 
@@ -18,10 +18,10 @@ const Home: NextPage = () => {
         <Header />
         <div className="flex flex-col max-w-2xl mx-auto space-y-5">
           <Intro />
+          <ZoteroReadingList />
           <Projects />
-          {/* <Contact /> */}
+          <Contact />
         </div>
-        <Footer />
       </div>
     </div>
   );

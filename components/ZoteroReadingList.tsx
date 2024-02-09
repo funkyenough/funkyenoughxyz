@@ -34,10 +34,13 @@ export default function ZoteroReadingList() {
   return (
     <div>
       <div className="text-lg font-bold my-8">What I am reading lately</div>
-      <ul className="sm:space-y-2 space-y-12">
+      <ul className="sm:space-y-2 space-y-12 bg-gray-800 px-4 py-2 rounded-lg">
         {(loading ? Array.from<Item>({ length: 5 }) : data).map(
           (item, index) => (
-            <li key={!item ? index : item.title}>
+            <li
+              key={!item ? index : item.title}
+              className="border-b border-gray-700 last:border-b-0"
+            >
               <div className="flex flex-col">
                 <div className="flex flex-col justify-between my-2 md:flex-row">
                   <div className="font-bold">

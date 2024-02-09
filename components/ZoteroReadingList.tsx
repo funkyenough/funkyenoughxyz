@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { formatDate } from "../utils/FormatDate";
-import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
 interface Item {
@@ -18,7 +18,7 @@ export default function ZoteroReadingList() {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("/api/zotero");
+      const response = await fetch("/api/getZoteroItems");
       let data: Item[] = await response.json();
       setData(data);
       setLoading(false);
@@ -34,22 +34,32 @@ export default function ZoteroReadingList() {
   return (
     <div>
       <div className="text-lg font-bold my-8">What I am reading lately</div>
-      <ul className="space-y-2">
+      <ul className="sm:space-y-2 space-y-12">
         {(loading ? Array.from<Item>({ length: 5 }) : data).map(
           (item, index) => (
             <li key={!item ? index : item.title}>
               <div className="flex flex-col">
-                <div className="flex flex-row justify-between">
-                  <div>
+                <div className="flex flex-col justify-between my-2 md:flex-row">
+                  <div className="font-bold">
                     {loading ? (
-                      <Skeleton width={200} height={20} />
+                      <Skeleton
+                        width={200}
+                        height={20}
+                        baseColor="#CCCCCC"
+                        borderRadius="0.5rem"
+                      />
                     ) : (
                       item.firstName + " " + item.lastName
                     )}
                   </div>
                   <div>
                     {loading ? (
-                      <Skeleton width={100} height={20} />
+                      <Skeleton
+                        width={100}
+                        height={20}
+                        baseColor="#CCCCCC"
+                        borderRadius="0.5rem"
+                      />
                     ) : (
                       formatDate(item.dateAdded)
                     )}{" "}
@@ -59,7 +69,15 @@ export default function ZoteroReadingList() {
                   href={item ? item.url : "#"}
                   className="text-left h-12 overflow-ellipsis"
                 >
-                  {loading ? <Skeleton count={2} /> : item.title}
+                  {loading ? (
+                    <Skeleton
+                      count={2}
+                      baseColor="#CCCCCC"
+                      borderRadius="0.5rem"
+                    />
+                  ) : (
+                    item.title
+                  )}
                 </a>
               </div>
 

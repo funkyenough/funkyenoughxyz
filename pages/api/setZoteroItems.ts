@@ -1,5 +1,6 @@
 import { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
+import { kv } from "@vercel/kv";
 
 interface Creator {
   firstName: string;
@@ -20,7 +21,7 @@ interface Item {
   };
 }
 
-export default async function fetchZoteroItems(
+export default async function setZoteroItems(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
@@ -69,7 +70,7 @@ export default async function fetchZoteroItems(
         }
 
         if (item.data.creators.length > 1) {
-          // If there are more than one creators, append "et al." to the last name
+          // If there are more than one creators, append "et al." to the last name]
           lastName += " et al.";
         }
 
@@ -84,7 +85,7 @@ export default async function fetchZoteroItems(
       }
     );
 
-    res.status(200).json(items);
+    kv.set("ZoteroReadingList", JSON.stringify(items));
   } catch (error) {
     res.status(500).json({ error: "Something went wrong" });
   }

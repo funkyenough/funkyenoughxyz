@@ -19,7 +19,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "pages/api/zotero.ts",
+    "pages/api/setZotero.ts",
     "utils/FormatDate.ts]"
   ],
   "exclude": ["node_modules"]

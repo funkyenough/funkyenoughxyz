@@ -86,6 +86,7 @@ export default async function setZoteroItems(
     );
 
     kv.set("ZoteroReadingList", JSON.stringify(items));
+    res.status(200).json(items);
   } catch (error) {
     res.status(500).json({ error: "Something went wrong" });
   }

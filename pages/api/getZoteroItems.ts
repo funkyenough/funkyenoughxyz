@@ -6,6 +6,5 @@ export default async function getZoteroItems(
   res: NextApiResponse
 ) {
   const items = await kv.get("ZoteroReadingList");
-  console.log(items);
   res.status(200).json(items);
 }

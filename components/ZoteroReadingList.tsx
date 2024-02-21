@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { formatDate } from "../utils/FormatDate";
+import { formatDate } from "../utils/formatDate";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
 
@@ -34,12 +34,12 @@ export default function ZoteroReadingList() {
   return (
     <div>
       <div className="text-lg font-bold my-8">What I am reading lately</div>
-      <ul className="sm:space-y-2 space-y-12 bg-gray-800 px-4 py-2 rounded-lg">
+      <ul className="sm:space-y-2 space-y-6 bg-[#202020] px-4 py-2 rounded-lg">
         {(loading ? Array.from<Item>({ length: 5 }) : data).map(
           (item, index) => (
             <li
               key={!item ? index : item.title}
-              className="border-b border-gray-700 last:border-b-0"
+              className="border-b border-gray-700 last:border-b-0 overflow-ellipsis"
             >
               <div className="flex flex-col">
                 <div className="flex flex-col justify-between my-2 md:flex-row">
@@ -68,16 +68,17 @@ export default function ZoteroReadingList() {
                     )}{" "}
                   </div>
                 </div>
-                <a
-                  href={item ? item.url : "#"}
-                  className="text-left h-12 overflow-ellipsis"
-                >
+                <a href={item ? item.url : "#"} className="text-left">
                   {loading ? (
-                    <Skeleton
-                      count={2}
-                      baseColor="#CCCCCC"
-                      borderRadius="0.5rem"
-                    />
+                    <div>
+                      <Skeleton baseColor="#CCCCCC" borderRadius="0.5rem" />
+                      <Skeleton
+                        count={2}
+                        baseColor="#CCCCCC"
+                        borderRadius="0.5rem"
+                        width={200}
+                      />
+                    </div>
                   ) : (
                     item.title
                   )}

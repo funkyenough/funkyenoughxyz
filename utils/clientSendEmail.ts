@@ -1,6 +1,6 @@
 import { FormData } from "../components/Form";
 
-export function sendEmail(data: FormData) {
+export function clientSendEmail(data: FormData) {
   const apiEndpoint = "/api/email";
 
   // Header Content Type is necessary because it is encoded as plain text by default

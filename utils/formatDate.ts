@@ -1,4 +1,4 @@
-// Function to convert ISO date to custom format  (YYYY/MM/DD)
+// Function to convert ISO date to custom format (YYYY/MM/DD)
 export const formatDate = (isoDate: string | number | Date) => {
   const dateObj = new Date(isoDate);
   const year = dateObj.getFullYear();

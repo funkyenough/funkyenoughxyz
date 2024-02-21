@@ -1,10 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
+import Form from "./Form";
 
-function Contact() {
+function Footer() {
   return (
-    <div className="text-center">
-      <div className="font-bold text-lg my-5">Contact</div>
+    <div>
+      <div className="font-bold text-lg my-5 text-center">Contact</div>
+      <Form />
       <div className="flex max-w-lg justify-center mx-auto space-x-5 my-5">
         <Link href="https://twitter.com/Funky_Enough_">
           <Image src="/x.svg" alt="X" width={20} height={20} />
@@ -16,16 +18,8 @@ function Contact() {
           <Image src="/osu.svg" alt="Osu" width={20} height={20} />
         </Link>
       </div>
-      <div>funky.enough.jp@gmail[dot]com</div>
-      {/* <form method="get">
-        <label>
-          Name:
-          <input type="text" />
-        </label>
-        <button>Save</button>
-      </form> */}
     </div>
   );
 }
 
-export default Contact;
+export default Footer;

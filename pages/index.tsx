@@ -3,9 +3,8 @@ import Head from "next/head";
 import Header from "../components/Header";
 import Intro from "../components/Intro";
 import Projects from "../components/Projects";
-import Contact from "../components/Contact";
+import Footer from "../components/Footer";
 import ZoteroReadingList from "../components/ZoteroReadingList";
-
 // Design Inspiration https://m3.material.io/get-started
 
 const Home: NextPage = () => {
@@ -20,7 +19,7 @@ const Home: NextPage = () => {
           <Intro />
           <ZoteroReadingList />
           <Projects />
-          <Contact />
+          <Footer />
         </div>
       </div>
     </div>

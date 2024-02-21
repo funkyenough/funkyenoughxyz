@@ -7,12 +7,15 @@
   },
   "dependencies": {
     "@emailjs/browser": "^3.11.0",
+    "@types/nodemailer": "^6.4.14",
     "@vercel/kv": "^1.0.1",
     "dotenv": "^16.0.3",
     "next": "latest",
     "node-fetch": "^3.3.1",
+    "nodemailer": "^6.9.9",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-hook-form": "^7.50.1",
     "react-loading-skeleton": "^3.4.0",
     "skycons": "^1.0.0",
     "yarn": "^1.22.19"

@@ -1,7 +1,7 @@
 import { FormData } from "../components/Form";
 
 export function clientSendEmail(data: FormData) {
-  const apiEndpoint = "/api/handler";
+  const apiEndpoint = "/api/serverSendEmail";
 
   // Header Content Type is necessary because it is encoded as plain text by default
   fetch(apiEndpoint, {

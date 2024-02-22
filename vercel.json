@@ -1,7 +1,7 @@
 {
     "crons": [
         {
-            "path": "/pages/api/setZoteroItems",
+            "path": "/api/setZoteroItems",
             "schedule": "0 0 * * *"
         }
     ]

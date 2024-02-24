@@ -42,33 +42,38 @@ export default function ZoteroReadingList() {
               className="border-b border-gray-700 last:border-b-0 overflow-ellipsis"
             >
               <div className="flex flex-col">
-                <div className="flex flex-col justify-between my-2 md:flex-row">
-                  <div className="font-bold">
-                    {loading ? (
-                      <Skeleton
-                        width={200}
-                        height={20}
-                        baseColor="#CCCCCC"
-                        borderRadius="0.5rem"
-                      />
-                    ) : (
-                      item.firstName + " " + item.lastName
-                    )}
+                <a
+                  href={item ? item.url : "#"}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-left"
+                >
+                  <div className="flex flex-col justify-between my-2 md:flex-row">
+                    <div className="font-bold">
+                      {loading ? (
+                        <Skeleton
+                          width={200}
+                          height={20}
+                          baseColor="#CCCCCC"
+                          borderRadius="0.5rem"
+                        />
+                      ) : (
+                        item.firstName + " " + item.lastName
+                      )}
+                    </div>
+                    <div>
+                      {loading ? (
+                        <Skeleton
+                          width={100}
+                          height={20}
+                          baseColor="#CCCCCC"
+                          borderRadius="0.5rem"
+                        />
+                      ) : (
+                        formatDate(item.dateAdded)
+                      )}{" "}
+                    </div>
                   </div>
-                  <div>
-                    {loading ? (
-                      <Skeleton
-                        width={100}
-                        height={20}
-                        baseColor="#CCCCCC"
-                        borderRadius="0.5rem"
-                      />
-                    ) : (
-                      formatDate(item.dateAdded)
-                    )}{" "}
-                  </div>
-                </div>
-                <a href={item ? item.url : "#"} className="text-left">
                   {loading ? (
                     <div>
                       <Skeleton baseColor="#CCCCCC" borderRadius="0.5rem" />

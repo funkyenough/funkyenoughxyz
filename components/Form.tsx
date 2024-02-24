@@ -16,7 +16,7 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)} className="mx-20">
       <div className="mb-5">
         <label htmlFor="email" className="mb-3 block text-base font-medium">
           Email Address
@@ -39,7 +39,7 @@ export default function Form() {
           {...register("message", { required: true })}
         ></textarea>
       </div>
-      <div>
+      <div className="flex justify-center">
         <button className="hover:shadow-form rounded-md bg-purple-500 py-3 px-8 text-base font-semibold text-white outline-none">
           Submit
         </button>

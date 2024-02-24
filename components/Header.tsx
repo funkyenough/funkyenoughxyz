@@ -13,10 +13,10 @@ export default function Header() {
       </div>
       <div className="flex flex-row space-x-4 font-bold">
         <div className="">
-          <Link href="/#Projects">Portfolio</Link>
+          <Link href="/#Skills">Skills</Link>
         </div>
         <div className="">
-          <Link href="/#Skills">Skills</Link>
+          <Link href="/#Projects">Projects</Link>
         </div>
         <div className="">
           <Link href="/#Contact">Contact</Link>

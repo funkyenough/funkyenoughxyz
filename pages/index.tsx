@@ -17,8 +17,8 @@ const Home: NextPage = () => {
         <Header />
         <div className="flex flex-col max-w-2xl mx-auto space-y-5">
           <Intro />
-          <ZoteroReadingList />
           <Projects />
+          <ZoteroReadingList />
           <Footer />
         </div>
       </div>

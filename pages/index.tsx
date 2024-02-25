@@ -13,9 +13,9 @@ const Home: NextPage = () => {
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>
-      <div className="p-10 bg-black text-white space-y-10">
-        <Header />
-        <div className="flex flex-col max-w-2xl mx-auto space-y-5">
+      <Header />
+      <div className="space-y-10 bg-black p-10 text-white">
+        <div className="mx-auto flex max-w-2xl flex-col space-y-5">
           <Intro />
           <Projects />
           <ZoteroReadingList />

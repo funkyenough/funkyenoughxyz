@@ -5,9 +5,9 @@ import Form from "./Form";
 function Footer() {
   return (
     <div>
-      <div className="font-bold text-lg my-5 text-center">Contact</div>
+      <div className="my-5 text-center text-lg font-bold">Contact</div>
       <Form />
-      <div className="flex max-w-lg justify-center mx-auto space-x-5 my-5">
+      <div className="mx-auto my-5 flex max-w-lg justify-center space-x-5">
         <Link href="https://twitter.com/Funky_Enough_">
           <Image src="/x.svg" alt="X" width={20} height={20} />
         </Link>

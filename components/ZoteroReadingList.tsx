@@ -33,13 +33,13 @@ export default function ZoteroReadingList() {
 
   return (
     <div>
-      <div className="text-lg font-bold my-8">What I am reading lately</div>
-      <ul className="sm:space-y-2 space-y-6 bg-[#202020] px-4 py-2 rounded-lg">
+      <div className="my-8 text-lg font-bold">What I am reading lately</div>
+      <ul className="space-y-6 rounded-lg bg-[#202020] px-4 py-2 sm:space-y-2">
         {(loading ? Array.from<Item>({ length: 5 }) : data).map(
           (item, index) => (
             <li
               key={!item ? index : item.title}
-              className="border-b border-gray-700 last:border-b-0 overflow-ellipsis"
+              className="overflow-ellipsis border-b border-gray-700 last:border-b-0"
             >
               <div className="flex flex-col">
                 <a
@@ -48,7 +48,7 @@ export default function ZoteroReadingList() {
                   rel="noopener noreferrer"
                   className="text-left"
                 >
-                  <div className="flex flex-col justify-between my-2 md:flex-row">
+                  <div className="my-2 flex flex-col justify-between md:flex-row">
                     <div className="font-bold">
                       {loading ? (
                         <Skeleton
@@ -92,7 +92,7 @@ export default function ZoteroReadingList() {
 
               <br />
             </li>
-          )
+          ),
         )}
       </ul>
     </div>

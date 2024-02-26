@@ -8,7 +8,7 @@ function scrollToElement(id: string) {
   const element = document.getElementById(id);
   if (element) {
     const y = element.getBoundingClientRect().top + window.pageYOffset - 42;
-    window.scrollTo({ top: y, behavior: "instant" });
+    window.scrollTo({ top: y, behavior: "auto" });
   }
 }
 

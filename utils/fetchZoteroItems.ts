@@ -5,7 +5,7 @@ interface Creator {
   lastName: string;
 }
 
-interface Item {
+interface ZoteroItem {
   filter: any;
   meta: {
     creatorSummary: string;
@@ -37,11 +37,12 @@ export default async function fetchZoteroItems() {
     redirect: "follow",
   });
 
-  const result = (await response.json()) as Item;
+  const result = (await response.json()) as ZoteroItem;
 
   const filteredResult = result.filter(
-    (item: Item) =>
-      item.data.itemType !== "attachment" && item.data.itemType !== "annotation"
+    (item: ZoteroItem) =>
+      item.data.itemType !== "attachment" &&
+      item.data.itemType !== "annotation",
   );
 
   const items = filteredResult.map(
@@ -75,7 +76,7 @@ export default async function fetchZoteroItems() {
         lastName,
         url: item.data.url,
       };
-    }
+    },
   );
   return items;
 }

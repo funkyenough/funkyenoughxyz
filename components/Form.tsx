@@ -16,7 +16,7 @@ export default function Form() {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="mx-20">
+    <form onSubmit={handleSubmit(onSubmit)} className="md:mx-20">
       <div className="mb-5">
         <label htmlFor="email" className="mb-3 block text-base font-medium">
           Email Address

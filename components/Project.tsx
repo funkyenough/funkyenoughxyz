@@ -7,16 +7,16 @@ function Project(props: { data: Project }) {
 
   switch (props.data.status) {
     case "Incomplete":
-      statusBgColor = "bg-red-200";
-      statusTextColor = " text-red-800";
+      statusBgColor = "bg-gray-900";
+      statusTextColor = "text-gray-500";
       break;
     case "In Progress":
       statusBgColor = "bg-yellow-200";
       statusTextColor = "text-yellow-800";
       break;
     default:
-      statusBgColor = "bg-gray-200";
-      statusTextColor = "text-gray-800";
+      statusBgColor = "bg-green-200";
+      statusTextColor = "text-green-800";
       break;
   }
 

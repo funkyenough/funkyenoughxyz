@@ -6,7 +6,7 @@ function Skills() {
   return (
     <div id="Skills" className="flex flex-col justify-center text-center">
       <div className="text-lg font-bold">Skills</div>
-      <div className="flex flex-row justify-between">
+      <div className="flex flex-row justify-between md:mx-20">
         <div className="flex flex-col">
           <div className="font-bold">Web3</div>
           <div className="flex flex-col">

@@ -13,3 +13,8 @@ module.exports = {
     ],
   },
 };
+
+module.exports = {
+  swcMinify: false,
+  swcLoader: false,
+};

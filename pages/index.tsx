@@ -5,11 +5,12 @@ import Intro from "../components/Intro";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
 import ZoteroReadingList from "../components/ZoteroReadingList";
+import Skills from "../components/Skills";
 // Design Inspiration https://m3.material.io/get-started
 
 const Home: NextPage = () => {
   return (
-    <div className="">
+    <div id="funkyenough">
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>
@@ -17,6 +18,7 @@ const Home: NextPage = () => {
       <div className="space-y-10 bg-black p-10 text-white">
         <div className="mx-auto flex max-w-2xl flex-col space-y-5">
           <Intro />
+          <Skills />
           <Projects />
           <ZoteroReadingList />
           <Footer />

@@ -1,6 +1,6 @@
 import React from "react";
-import { skills } from "../data/skills";
-import Skill from "./Skill";
+// import { skills } from "../data/skills";
+// import Skill from "./Skill";
 
 function Skills() {
   return (

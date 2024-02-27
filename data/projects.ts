@@ -10,6 +10,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 0,
+    name: "funkyenough.xyz",
+    description: "Personal Website, which you are currently viewing.",
+    category: "Personal",
+    stack: "NextJS, React, Tailwindcss, Vercel",
+    status: "In Progress",
+    url: "https://github.com/funkyenough/funkyenoughxyz",
+  },
+  {
     id: 1,
     name: "near-rust-sdk",
     description: "Issue #1116 - Add Generic Support for PanicOnDefault",

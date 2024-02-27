@@ -38,7 +38,7 @@ export default function Header() {
   }, [isOpen]);
 
   return (
-    <header className="sticky top-0 z-40 flex justify-between bg-black px-5 py-2 text-white shadow-sm">
+    <header className="sticky top-0 z-40 mx-auto flex max-w-4xl justify-between bg-black py-2 text-white shadow-sm">
       <button
         onClick={() => scrollToElement("funkyenough")}
         className="text-lg font-bold"

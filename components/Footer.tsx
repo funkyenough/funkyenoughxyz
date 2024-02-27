@@ -4,8 +4,7 @@ import Form from "./Form";
 
 function Footer() {
   return (
-    <div id="Contact">
-      <div className="my-5 text-center text-lg font-bold">Contact</div>
+    <div>
       <Form />
       <div className="mx-auto my-5 flex max-w-lg justify-center space-x-5">
         <Link href="https://twitter.com/Funky_Enough_">

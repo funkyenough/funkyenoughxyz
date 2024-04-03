@@ -10,6 +10,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    id: 5,
+    name: "42 C Piscine",
+    description: "1 Month intensive C Programming Bootcamp",
+    category: "Personal",
+    stack: "C, Makefile, Git, Vim",
+    status: "Complete",
+    url: "https://42tokyo.jp",
+  },
+  {
     id: 0,
     name: "funkyenough.xyz",
     description: "Personal Website, which you are currently viewing.",

@@ -9,7 +9,7 @@ import Skills from "../components/Skills";
 
 const Home: NextPage = () => {
   return (
-    <div id="funkyenough" className="bg-black text-white">
+    <div id="funkyenough" className="bg-black px-10 text-white">
       <Head>
         <title>funkyenough's HomePage</title>
       </Head>
